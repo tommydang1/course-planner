@@ -1,3 +1,4 @@
+require("dotenv").config();
 const express = require("express");
 const cors = require("cors");
 const pool = require("./db");
@@ -13,10 +14,10 @@ app.use(express.json());
 // Create a course
 app.post("/courses", async (req, res) => {
   try {
-    const { description } = req.body;
+    const { code, name, description } = req.body;
     const newCourse = await pool.query(
-      "INSERT INTO course (description) VALUES($1) RETURNING *",
-      [description]
+      "INSERT INTO course (code, name, description) VALUES($1, $2, $3) RETURNING *",
+      [code, name, description]
     );
 
     res.json(newCourse);
@@ -40,10 +41,7 @@ app.get("/courses", async (req, res) => {
 app.get("/courses/:id", async (req, res) => {
   try {
     const { id } = req.params;
-    const course = await pool.query(
-      "SELECT * FROM course WHERE course_id = $1",
-      [id]
-    );
+    const course = await pool.query("SELECT * FROM course WHERE id = $1", [id]);
 
     res.json(course.rows[0]);
   } catch (err) {
@@ -57,7 +55,7 @@ app.put("/courses/:id", async (req, res) => {
     const { id } = req.params;
     const { description } = req.body;
     const updateCourse = await pool.query(
-      "UPDATE course SET description = $1 WHERE course_id = $2",
+      "UPDATE course SET description = $1 WHERE id = $2",
       [description, id]
     );
 
@@ -71,10 +69,9 @@ app.put("/courses/:id", async (req, res) => {
 app.delete("/courses/:id", async (req, res) => {
   try {
     const { id } = req.params;
-    const deleteCourse = await pool.query(
-      "DELETE FROM course WHERE course_id = $1",
-      [id]
-    );
+    const deleteCourse = await pool.query("DELETE FROM course WHERE id = $1", [
+      id,
+    ]);
 
     res.json("Course deleted");
   } catch (err) {

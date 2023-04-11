@@ -1,6 +1,8 @@
 CREATE DATABASE planner;
 
 CREATE TABLE course(
-    course_id SERIAL PRIMARY KEY,
-    description VARCHAR(255)
+    id SERIAL PRIMARY KEY NOT NULL,
+    code VARCHAR(10) NOT NULL,
+    name VARCHAR(50) NOT NULL,
+    description VARCHAR(1000)
 );
