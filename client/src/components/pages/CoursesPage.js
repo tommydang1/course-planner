@@ -17,32 +17,30 @@ const CoursesPage = () => {
 
   return (
     <Layout>
-      <div className="px-16 w-screen">
-        <div className="text-3xl font-bold pb-4">Courses</div>
-        <div className="border border-black font-bold text-xl mb-4 p-2">
-          <div> Filters </div>
-          <div className="flex">
-            <input type="checkbox" className="checked:bg-blue-500" />
-            <div className="text-base font-normal"> WIP </div>
-          </div>
-        </div>
+      <div className="text-3xl font-bold pb-4">Courses</div>
+      <div className="border border-black font-bold text-xl mb-4 p-2">
+        <div> Filters </div>
         <div className="flex">
-          <div className="w-2/3">
-            <div className="text-2xl font-bold">Lower Div</div>
-            <CoursesDisplay
-              division="Lower Division"
-              displayToName={displayToName}
-            />
-            <div className="text-2xl font-bold">Upper Div</div>
-            <CoursesDisplay
-              division="Upper Division"
-              displayToName={displayToName}
-            />
-            <div className="text-2xl font-bold">Graduate</div>
-            <CoursesDisplay division="Graduate" displayToName={displayToName} />
-          </div>
-          <CourseSticky courseInfo={courseInfo} />
+          <input type="checkbox" className="checked:bg-blue-500" />
+          <div className="text-base font-normal"> WIP </div>
         </div>
+      </div>
+      <div className="flex">
+        <div className="w-2/3">
+          <div className="text-2xl font-bold">Lower Div</div>
+          <CoursesDisplay
+            division="Lower Division"
+            displayToName={displayToName}
+          />
+          <div className="text-2xl font-bold">Upper Div</div>
+          <CoursesDisplay
+            division="Upper Division"
+            displayToName={displayToName}
+          />
+          <div className="text-2xl font-bold">Graduate</div>
+          <CoursesDisplay division="Graduate" displayToName={displayToName} />
+        </div>
+        <CourseSticky courseInfo={courseInfo} />
       </div>
     </Layout>
   );

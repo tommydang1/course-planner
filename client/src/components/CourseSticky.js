@@ -1,6 +1,29 @@
-import React from "react";
+import React, { useState } from "react";
 
 const CourseSticky = ({ courseInfo }) => {
+  const addToCart = async (e) => {
+    try {
+      const body = { course_id: courseInfo["id"] };
+      const response = await fetch(
+        "http://localhost:4000/dashboard/courses/add",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            jwt_token: localStorage.token,
+          },
+          body: JSON.stringify(body),
+        }
+      );
+
+      const parseResponse = await response.json();
+
+      console.log(parseResponse);
+    } catch (err) {
+      console.error(err.message);
+    }
+  };
+
   return (
     <div
       className="overflow-auto border border-gray-600 sticky top-10 w-1/3 text-center mx-10 mr-0"
@@ -30,6 +53,14 @@ const CourseSticky = ({ courseInfo }) => {
           {" "}
           Visit Course Page
         </a>
+      )}
+      {localStorage.token && "id" in courseInfo && (
+        <button
+          onClick={() => addToCart(courseInfo["id"])}
+          className="px-4 py-2 mx-3 rounded-2xl bg-yellow-300 hover:bg-yellow-400"
+        >
+          Add to Cart
+        </button>
       )}
     </div>
   );

@@ -118,8 +118,6 @@ const SchedulerPage = () => {
   // Driver Code
   let g = new Graph(exampleCourses);
 
-  console.log("Following is a Topological sort of the given graph");
-
   for (let i = 0; i < examplePrereqs.length; i++) {
     g.addEdge(examplePrereqs[i][0], examplePrereqs[i][1]);
   }
@@ -133,14 +131,12 @@ const SchedulerPage = () => {
 
   return (
     <Layout>
-      <div className="flex" style={{ minHeight: "100vh" }}>
-        <div className="border w-1/4">
+      <div className="flex justify-between" style={{ minHeight: "100vh" }}>
+        <div className="border pr-20">
           Possible Course Order:
           {courseList}
         </div>
-        <div className="float-right pr-8">
-          <Flow />
-        </div>
+        <Flow />
       </div>
     </Layout>
   );

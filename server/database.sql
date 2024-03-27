@@ -1,8 +1,0 @@
-CREATE DATABASE planner;
-
-CREATE TABLE course(
-    id SERIAL PRIMARY KEY NOT NULL,
-    code VARCHAR(10) NOT NULL,
-    name VARCHAR(50) NOT NULL,
-    description VARCHAR(1000)
-);

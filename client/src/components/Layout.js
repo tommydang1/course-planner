@@ -7,7 +7,9 @@ const Layout = ({ children }) => {
   return (
     <div className="h-screen">
       <Header></Header>
-      <main>{children}</main>
+      <div className="container px-2 mx-auto">
+        <main>{children}</main>
+      </div>
       <Footer></Footer>
     </div>
   );

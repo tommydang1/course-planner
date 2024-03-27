@@ -1,4 +1,6 @@
+import React, { useCallback } from "react";
 import ReactFlow, {
+  addEdge,
   Controls,
   Background,
   ConnectionLineType,
@@ -14,14 +16,18 @@ import { initialNodes, initialEdges } from "./nodes-edges";
 const dagreGraph = new dagre.graphlib.Graph();
 dagreGraph.setDefaultEdgeLabel(() => ({}));
 
-const nodeWidth = 172;
+const nodeWidth = 72;
 const nodeHeight = 36;
 
-const getLayoutedElements = (nodes, edges) => {
-  dagreGraph.setGraph({ rankdir: "TB" });
+const getLayoutedElements = (nodes, edges, direction = "TB") => {
+  const isHorizontal = direction === "LR";
+  dagreGraph.setGraph({ rankdir: direction });
 
   nodes.forEach((node) => {
-    dagreGraph.setNode(node.id, { width: nodeWidth, height: nodeHeight });
+    dagreGraph.setNode(node.id, {
+      width: nodeWidth,
+      height: nodeHeight,
+    });
   });
 
   edges.forEach((edge) => {
@@ -32,9 +38,18 @@ const getLayoutedElements = (nodes, edges) => {
 
   nodes.forEach((node) => {
     const nodeWithPosition = dagreGraph.node(node.id);
+    node.targetPosition = isHorizontal ? "left" : "top";
+    node.sourcePosition = isHorizontal ? "right" : "bottom";
 
     // We are shifting the dagre node position (anchor=center center) to the top left
     // so it matches the React Flow node anchor point (top left).
+    // let nodeWidth = node.data.label.length * 10;
+    // let nodeHeight = node.data.label.length * 5;
+
+    node.style = {
+      width: 120,
+    };
+
     node.position = {
       x: nodeWithPosition.x - nodeWidth / 2,
       y: nodeWithPosition.y - nodeHeight / 2,
@@ -52,9 +67,28 @@ const { nodes: layoutedNodes, edges: layoutedEdges } = getLayoutedElements(
 );
 
 const Flow = () => {
-  const [nodes, , onNodesChange] = useNodesState(layoutedNodes);
-  const [edges, , onEdgesChange] = useEdgesState(layoutedEdges);
+  const [nodes, setNodes, onNodesChange] = useNodesState(layoutedNodes);
+  const [edges, setEdges, onEdgesChange] = useEdgesState(layoutedEdges);
+  const onConnect = useCallback(
+    (params) =>
+      setEdges((eds) =>
+        addEdge(
+          { ...params, type: ConnectionLineType.SmoothStep, animated: true },
+          eds
+        )
+      ),
+    []
+  );
+  const onLayout = useCallback(
+    (direction) => {
+      const { nodes: layoutedNodes, edges: layoutedEdges } =
+        getLayoutedElements(nodes, edges, direction);
 
+      setNodes([...layoutedNodes]);
+      setEdges([...layoutedEdges]);
+    },
+    [nodes, edges]
+  );
   return (
     <div
       className="min-h-96 min-w-96 border-2 border-cyan-500"
@@ -66,11 +100,28 @@ const Flow = () => {
         onNodesChange={onNodesChange}
         onEdgesChange={onEdgesChange}
         connectionLineType={ConnectionLineType.SmoothStep}
+        onConnect={onConnect}
         fitView
       >
         <Background />
         <Controls />
       </ReactFlow>
+      <div className="mt-2 text-xs">
+        <button
+          type="button"
+          onClick={() => onLayout("TB")}
+          className="mr-4 bg-slate-100 border rounded border-slate-600 px-2 py-1 hover:bg-slate-200 hover:border-slate-700 active:bg-slate-50 active:border-slate-500"
+        >
+          vertical layout
+        </button>
+        <button
+          type="button"
+          onClick={() => onLayout("LR")}
+          className="bg-slate-100 border rounded border-slate-600 px-2 py-1 hover:bg-slate-200 hover:border-slate-700 active:bg-slate-50 active:border-slate-500"
+        >
+          horizontal layout
+        </button>
+      </div>
     </div>
   );
 };
