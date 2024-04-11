@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import coursesJSON from "../data/categories.json";
+import coursesJSON from "../data/cse/categories.json";
 
 const CoursesDisplay = ({ division, displayToName, isSelected }) => {
   const [courses, setCourses] = useState([]);

@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import CoursesDisplay from "../CoursesDisplay";
 import Layout from "../Layout";
-import coursesData from "../../data/scraped_cse_data.json";
+import coursesData from "../../data/cse/scraped_cse_data.json";
 import CourseSticky from "../CourseSticky";
 
 const CoursesPage = () => {

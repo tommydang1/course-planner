@@ -1,8 +1,6 @@
 import React, { useState, useEffect } from "react";
-import { useNavigate } from "react-router-dom";
 
 const CoursesCart = () => {
-  const navigate = useNavigate();
   const [courses, setCourses] = useState([]);
 
   const getCourses = async () => {
@@ -54,7 +52,7 @@ const CoursesCart = () => {
         key={course}
         onClick={() => deleteCourse(course)}
         className={
-          "border border-gray-400 rounded-3xl w-32 px-6 py-2 mx-4 my-2 text-center hover:bg-gray-600 hover:text-gray-50"
+          "border border-gray-400 rounded-3xl w-32 px-6 py-2 mx-4 my-2 text-center hover:bg-red-500 hover:text-white hover:border-red-500"
         }
       >
         {course}

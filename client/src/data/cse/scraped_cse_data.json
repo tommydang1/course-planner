@@ -358,22 +358,6 @@
       }
     },
     {
-      "id": "CSE 100L",
-      "name": " Logic Design Laboratory",
-      "link": "https://catalog.ucsc.edu/en/current/General-Catalog/Courses/CSE-Computer-Science-and-Engineering/Upper-Division/CSE-100L",
-      "credits": "2",
-      "description": "Laboratory sequence illustrating topics covered in course 100. Two 2-hour laboratory sessions per week. Weekly laboratory assignments which require the use of the oscilloscopes, TTL circuits, computer-aided design and simulation tools, and programmable logic.",
-      "instructor": ["Scott Beamer", "Martine Schlag", "Sagnik Nath"],
-      "requirements": { "prereq": ["CSE 12"], "coreq": ["CSE 100"] },
-      "ge_code": "",
-      "quarter_offered": {
-        "fall": true,
-        "winter": true,
-        "spring": true,
-        "summer": false
-      }
-    },
-    {
       "id": "CSE 101",
       "name": " Introduction to Data Structures and Algorithms",
       "link": "https://catalog.ucsc.edu/en/current/General-Catalog/Courses/CSE-Computer-Science-and-Engineering/Upper-Division/CSE-101",
@@ -845,11 +829,9 @@
         "prereq": [
           "CSE 12",
           "CSE 100",
-          "CSE 100L",
           "CSE 13S",
           "ECE 13",
           "ECE 101",
-          "ECE 101L",
           "PHYS 5C",
           "PHYS 5N"
         ],
@@ -1235,22 +1217,6 @@
       }
     },
     {
-      "id": "CSE 151L",
-      "name": " Advanced Computer Networks Laboratory",
-      "link": "https://catalog.ucsc.edu/en/current/General-Catalog/Courses/CSE-Computer-Science-and-Engineering/Upper-Division/CSE-151L",
-      "credits": "2",
-      "description": "Laboratory illustrating the concepts covered in <a class='sc-courselink' href='/en/current/General-Catalog/Courses/CSE-Computer-Science-and-Engineering/Upper-Division/CSE-151'>CSE 151</a>: provides students with hands-on experience in computer networks. (Formerly Computer Engineering 151L.)",
-      "instructor": [" The Staff", "Bradley Smith", "Jose Garcia-Luna-Aceves"],
-      "requirements": { "prereq": ["CSE 150", "CSE 151"], "coreq": [] },
-      "ge_code": "",
-      "quarter_offered": {
-        "fall": false,
-        "winter": false,
-        "spring": true,
-        "summer": false
-      }
-    },
-    {
       "id": "CSE 152",
       "name": " Principles of Computer Communication",
       "link": "https://catalog.ucsc.edu/en/current/General-Catalog/Courses/CSE-Computer-Science-and-Engineering/Upper-Division/CSE-152",
@@ -1272,22 +1238,6 @@
       "link": "https://catalog.ucsc.edu/en/current/General-Catalog/Courses/CSE-Computer-Science-and-Engineering/Upper-Division/CSE-156",
       "credits": "5",
       "description": "Methods and tools used for network programming. Topics include: operating system (OS) support for network protocols; inter-process communication (IPC) facilities, such as pipes, sockets, and remote procedure call (RPC); design of client and server sides of network applications; network security; and programming projects. (Formerly Computer Engineering 156.)",
-      "instructor": [" The Staff", "Mehrdad Parsa", "Anujan Varma"],
-      "requirements": { "prereq": [], "coreq": [] },
-      "ge_code": "",
-      "quarter_offered": {
-        "fall": false,
-        "winter": true,
-        "spring": false,
-        "summer": false
-      }
-    },
-    {
-      "id": "CSE 156L",
-      "name": " Network Programming Laboratory",
-      "link": "https://catalog.ucsc.edu/en/current/General-Catalog/Courses/CSE-Computer-Science-and-Engineering/Upper-Division/CSE-156L",
-      "credits": "2",
-      "description": "Laboratory sequence illustrating concepts taught in <a class='sc-courselink' href='/en/current/General-Catalog/Courses/CSE-Computer-Science-and-Engineering/Upper-Division/CSE-156'>CSE 156</a>. Students learn use of network programming tools and methods via programming exercises. (Formerly Computer Engineering 156L.)",
       "instructor": [" The Staff", "Mehrdad Parsa", "Anujan Varma"],
       "requirements": { "prereq": [], "coreq": [] },
       "ge_code": "",
@@ -1350,22 +1300,6 @@
       }
     },
     {
-      "id": "CSE 161L",
-      "name": " Data Visualization Laboratory",
-      "link": "https://catalog.ucsc.edu/en/current/General-Catalog/Courses/CSE-Computer-Science-and-Engineering/Upper-Division/CSE-161L",
-      "credits": "2",
-      "description": "Complements <a class='sc-courselink' href='/en/current/General-Catalog/Courses/CSE-Computer-Science-and-Engineering/Upper-Division/CSE-161'>CSE 161</a>. Students gain additional competence with a number of important software development tools and techniques. Included are Paraview,  Visualization Toolkit (VTK), and Insight Toolkit (ITK). Students get hands-on experience with designing transfer functions, isosurfacing, direct volume rendering, vector-field visualization techniques, as well as methods for dealing with non-spatial data. (Formerly CMPS 161L.)",
-      "instructor": ["Alex Pang", "Suresh Lodha"],
-      "requirements": { "prereq": [], "coreq": [] },
-      "ge_code": "",
-      "quarter_offered": {
-        "fall": false,
-        "winter": false,
-        "spring": false,
-        "summer": false
-      }
-    },
-    {
       "id": "CSE 162",
       "name": " Advanced Computer Graphics and Animation",
       "link": "https://catalog.ucsc.edu/en/current/General-Catalog/Courses/CSE-Computer-Science-and-Engineering/Upper-Division/CSE-162",
@@ -1373,22 +1307,6 @@
       "description": "Covers concepts and methods for modeling and rendering static and dynamic scenes Topics include: mathematical foundations (e.g., splines and numerical integration; global illumination models; texture mapping; morphing; physically based animation; behavioral animations; and procedural animations. Evaluation based on examinations, programming exercises, and a project. (Formerly CMPS 162.)",
       "instructor": ["Alex Pang", "James Davis"],
       "requirements": { "prereq": ["CSE 160", "CSE 162L"], "coreq": [] },
-      "ge_code": "",
-      "quarter_offered": {
-        "fall": false,
-        "winter": false,
-        "spring": false,
-        "summer": false
-      }
-    },
-    {
-      "id": "CSE 162L",
-      "name": " Advanced Computer Graphics and Animation Laboratory",
-      "link": "https://catalog.ucsc.edu/en/current/General-Catalog/Courses/CSE-Computer-Science-and-Engineering/Upper-Division/CSE-162L",
-      "credits": "2",
-      "description": "Complements CSE&nbsp;162. Students gain additional competence in a hands-on computational laboratory setting. Representative examples include topics, such as interactive curve and surface design; shaders for advanced effects; crowd and behavioral animation; experiments with particle systems; facial animation; and motion and planning. (Formerly CMPS 162L.)",
-      "instructor": ["Alex Pang", "James Davis"],
-      "requirements": { "prereq": ["CSE 162"], "coreq": [] },
       "ge_code": "",
       "quarter_offered": {
         "fall": false,
@@ -1604,6 +1522,22 @@
       "instructor": ["David Harrison"],
       "requirements": { "prereq": ["CSE 30", "CSE 101"], "coreq": [] },
       "ge_code": "",
+      "quarter_offered": {
+        "fall": true,
+        "winter": true,
+        "spring": false,
+        "summer": true
+      }
+    },
+    {
+      "id": "CSE 187",
+      "name": " Full Stack Web Development II",
+      "link": "https://catalog.ucsc.edu/en/current/General-Catalog/Courses/CSE-Computer-Science-and-Engineering/Upper-Division/CSE-187",
+      "credits": "5",
+      "description": "Continues the examination of current uses of the World Wide Web for delivery of the sophisticated interactive applications we use daily. Advanced development techniques are examined with continued emphasis on automated testing. A sizable team project is undertaken to introduce topics including, but not limited to, automated build pipelines, penetration testing, API versioning, and deployment at scale.\n",
+      "instructor": [],
+      "requirements": { "prereq": ["CSE 186"], "coreq": [] },
+      "ge_code": "PR-E",
       "quarter_offered": {
         "fall": true,
         "winter": true,
