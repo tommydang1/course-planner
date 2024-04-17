@@ -58,15 +58,15 @@ const Register = () => {
 
   return (
     <Layout>
-      <h1 className="mt-5 text-center">Register</h1>
-      <form onSubmit={onSubmitForm}>
+      <h1 className="ml-6 text-xl">Register</h1>
+      <form className="flex flex-col w-min ml-6" onSubmit={onSubmitForm}>
         <input
           type="text"
           name="email"
           value={email}
           placeholder="Email"
           onChange={(e) => onChange(e)}
-          className="my-3"
+          className="my-3 px-2 py-1 border rounded border-black"
         />
         <input
           type="password"
@@ -74,7 +74,7 @@ const Register = () => {
           value={password}
           placeholder="Password"
           onChange={(e) => onChange(e)}
-          className="my-3"
+          className="mb-3 px-2 py-1 border rounded border-black"
         />
         <input
           type="password"
@@ -82,13 +82,15 @@ const Register = () => {
           value={confirmPassword}
           placeholder="Confirm Password"
           onChange={(e) => onChange(e)}
-          className="my-3"
+          className="mb-3 px-2 py-1 border rounded border-black"
         />
-        <button type="submit" className="btn">
+        <button
+          type="submit"
+          className="btn px-2 py-1 border rounded border-gray-500 bg-blue-300"
+        >
           Submit
         </button>
       </form>
-      <Link to="/login">login</Link>
       <ToastContainer />
     </Layout>
   );

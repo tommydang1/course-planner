@@ -37,13 +37,18 @@ const SchedulerPage = () => {
 
   return (
     <Layout>
-      <div className="flex justify-between">
-        <div className="border pr-20">
-          Possible Course Order:
-          {courseOrder}
+      {!courses?.length ? (
+        <div>Log in and add classes to your cart to use the scheduler page</div>
+      ) : (
+        <div className="flex justify-between">
+          <div className="border pr-20">
+            Possible Course Order:
+            {courseOrder}
+          </div>
+
+          <Flow courses={courses} prereqsJSON={prereqsCSE} />
         </div>
-        {courses?.length && <Flow courses={courses} prereqsJSON={prereqsCSE} />}
-      </div>
+      )}
     </Layout>
   );
 };
